@@ -1,0 +1,10 @@
+body {background-color:dimgrey;
+color: white}
+h1 {color: black;
+font-size: 36px;}
+h2 {font-size: 28px;
+color: aquamarine;}
+p {font-size: 17px;
+line-height: 1.6;}
+a {color: beige;}
+a:hover {color: orange}
