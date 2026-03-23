@@ -1,0 +1,19 @@
+body {background-color:dimgrey;
+color: white}
+h1 {color: black;
+font-size: 36px;}
+h2 {font-size: 28px;
+color: aquamarine;}
+p {font-size: 17px;
+line-height: 1.6;}
+a {color: beige;}
+a:hover {color: orange}
+h3 {padding: 6px 10px;
+margin: 16px 0 8px 0;
+border-bottom: 1px solid blue;}
+.container {display: flex;
+flex-direction: column;}
+@media (min-width: 768px) {
+.container {flex-direction: row;
+flex-wrap: wrap;}
+article {flex: 1 1 calc(50% - 20px);}}
