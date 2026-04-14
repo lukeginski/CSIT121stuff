@@ -1,0 +1,187 @@
+/* Base */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #1a0000;
+  color: #f0f0f0;
+  margin: 20px;
+}
+
+h1 {
+  color: #cc0000;
+}
+
+h2 {
+  color: #cc0000;
+}
+
+p {
+  line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+  background-color: #2a0000;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #cc0000;
+}
+
+nav a {
+  color: #f0d060;
+  text-decoration: none;
+  margin-right: 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: white;
+}
+
+/* Footer */
+footer {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #2a0000;
+  color: #f0d060;
+  text-align: center;
+  border-top: 3px solid #cc0000;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+caption {
+  text-align: left;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #f0d060;
+}
+
+th, td {
+  border: 1px solid #660000;
+  padding: 8px;
+  text-align: center;
+}
+
+thead tr {
+  background-color: #2a0000;
+  color: #f0d060;
+}
+
+th[scope="row"] {
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 50px;
+}
+
+td img {
+  display: block;
+  margin: 0 auto 5px;
+  width: 80px;
+}
+
+.empty-cell {
+  color: #660000;
+}
+
+/* Tier Row Colors */
+.tier-s { background-color: #6b0000; }
+.tier-s th[scope="row"] { color: #f0d060; }
+
+.tier-a { background-color: #7a2000; }
+.tier-a th[scope="row"] { color: #f0d060; }
+
+.tier-b { background-color: #4a1500; }
+.tier-b th[scope="row"] { color: #f0d060; }
+
+.tier-c { background-color: #3a0000; }
+.tier-c th[scope="row"] { color: #f0d060; }
+
+.tier-d { background-color: #220000; }
+.tier-d th[scope="row"] { color: #f0d060; }
+
+/* Reflection */
+.reflection {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #2a0000;
+  border-left: 4px solid #cc0000;
+}
+
+/* Form */
+form {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #2a0000;
+  border: 1px solid #660000;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #f0d060;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #660000;
+  background-color: #3a0000;
+  color: #f0f0f0;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+fieldset {
+  border: 1px solid #660000;
+  padding: 10px;
+  margin: 0;
+}
+
+legend {
+  font-weight: bold;
+  color: #f0d060;
+}
+
+fieldset label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 10px;
+  font-weight: normal;
+  color: #f0f0f0;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: #cc0000;
+}
+
+button[type="submit"] {
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #ff0000;
+}

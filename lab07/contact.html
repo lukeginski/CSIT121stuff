@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCU Survey</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav>
+    <a href="tierlist.html">Tier List</a>
+    <a href="contact.html">Contact / Survey</a>
+  </nav>
+
+  <main>
+    <h1>Contact Form/Hero Survey</h1>
+    <p>Share your thoughts on the MCU hero rankings! This form is for demonstration purposes only.</p>
+
+    <form>
+
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="Luke Ginski">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="example@email.ccbcmd.edu">
+      </div>
+
+      <div class="form-group">
+        <label for="comments">Do you have any comments about the tier list?</label>
+        <textarea id="comments" name="comments" rows="5"
+          placeholder="Do you agree with my rankings? LMK!"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="fav-hero">Who is your favorite MCU hero?</label>
+        <select id="fav-hero" name="fav-hero">
+          <option value="">-- Select a hero --</option>
+          <option value="spiderman">Spider-Man</option>
+          <option value="ironman">Iron Man</option>
+          <option value="cap">Captain America</option>
+          <option value="blackpanther">Black Panther</option>
+          <option value="thor">Thor</option>
+          <option value="hulk">Hulk</option>
+          <option value="drstrange">Doctor Strange</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <fieldset>
+          <legend>What is your favorite MCU movie?</legend>
+          <label><input type="radio" name="fav-movie" value="endgame"> Avengers: Endgame</label>
+          <label><input type="radio" name="fav-movie" value="infinitywar"> Avengers: Infinity War</label>
+          <label><input type="radio" name="fav-movie" value="spiderman"> Spider-Man: No Way Home</label>
+          <label><input type="radio" name="fav-movie" value="ironman"> Iron Man</label>
+          <label><input type="radio" name="fav-movie" value="other"> Other</label>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <fieldset>
+          <legend>What is your favorite "group" in the MCU?</legend>
+          <label><input type="checkbox" name="team" value="avengers"> The Avengers</label>
+          <label><input type="checkbox" name="team" value="guardians"> Guardians of the Galaxy</label>
+          <label><input type="checkbox" name="team" value="xmen"> X-Men</label>
+          <label><input type="checkbox" name="team" value="fantastic4"> Fantastic Four</label>
+        </fieldset>
+      </div>
+
+      <div class="form-group">
+        <label for="rating">What woudl you rate the MCU on a scale from 1-10?</label>
+        <input type="range" id="rating" name="rating" min="1" max="10" value="7">
+      </div>
+
+      <button type="submit">Submit Survey</button>
+
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CSIT121 Lab 07</p>
+  </footer>
+
+</body>
+</html>
