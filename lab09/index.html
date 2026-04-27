@@ -1,31 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Reads the XML data using JavaScript</title>
-
-    <!-- CSS -->
     <style>
         table {
             border-collapse: collapse;
             width: 100%;
         }
-
-        th,
-        td {
+        th, td {
             text-align: left;
             padding: 8px;
         }
-
         tr:nth-child(even) {
-            background-color: #7ce2af
+            background-color: #7ce2af;
         }
-
         th {
             background-color: #7c0f65;
             color: white;
         }
-
         .button {
             position: relative;
             text-align: center;
@@ -37,79 +28,92 @@
             border-radius: 30px;
             font-size: 30px;
             width: 500px;
-            display: block;
-            margin: 0 auto;
-
         }
-
         .button:hover {
             color: black;
             background: white;
         }
     </style>
-
-    <!--JavaScript-->
     <script>
-    var tableVisible = false;
+        /*
+         * AI-ASSISTED CODE — Toggle Feature
+         * Generated with Claude (Anthropic) on 2026-04-27
+         *
+         * Prompt given to AI:
+         * "Update the code to allow the button to toggle the table off and on.
+         *  The button text should display 'Get Employee Data' or 'Close Employee Data'
+         *  depending on its current state."
+         *
+         * What the AI added/changed:
+         * 1. Added a boolean variable `tableVisible` to track whether the table is shown.
+         * 2. Renamed the function to `toggleEmployeeData()` to reflect its new toggle behavior.
+         * 3. On first click (or when hidden): loads XML and displays the table, updates button text.
+         * 4. On subsequent clicks (when visible): clears the table and resets button text.
+         * 5. XML loading logic and empDetails() function remain unchanged from original.
+         */
 
-    function toggleTable() {
-        var table = document.getElementById("id");
-        if (tableVisible == false) {
-            loadXMLDoc();
-            table.style.display = "block";
-            document.getElementById("btn").innerHTML = "Close Employee Data";
-            tableVisible = true;
-        } else {
-            table.style.display = "none";
-            document.getElementById("btn").innerHTML = "Get Employee Data";
-            tableVisible = false;
-        }
-    }
+        // Tracks whether the table is currently displayed (AI-added)
+        let tableVisible = false;
 
-    function loadXMLDoc() {
-        let xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                empDetails(this);
+        // AI-modified: was loadXMLDoc(), now handles both show and hide behavior
+        function toggleEmployeeData() {
+            let btn = document.getElementById("toggleBtn");
+
+            if (tableVisible) {
+                // Table is visible — hide it and reset (AI-added block)
+                document.getElementById("id").innerHTML = "";
+                btn.textContent = "Get Employee Data";
+                tableVisible = false;
+            } else {
+                // Table is hidden — fetch XML and display it (AI-added block)
+                let xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        empDetails(this);
+                        // Update button text after data loads (AI-added)
+                        btn.textContent = "Close Employee Data";
+                        tableVisible = true;
+                    }
+                };
+                xmlhttp.open("GET", "employee.xml", true);
+                xmlhttp.send();
             }
-        };
-        xmlhttp.open("GET", "employee.xml", true);
-        xmlhttp.send();
-    }
-
-    function empDetails(xml) {
-        let i;
-        let xmlDoc = xml.responseXML;
-        let table = `<tr><th>Firstname</th><th>Lastname</th>
-            <th>Title</th><th>Division</th>
-            <th>Building</th><th>Room</th>
-        </tr>`;
-        let x = xmlDoc.getElementsByTagName("employee");
-
-        for (i = 0; i < x.length; i++) {
-            table += "<tr><td>" +
-                x[i].getElementsByTagName("firstname")[0].childNodes[0].nodeValue + "</td><td>" +
-                x[i].getElementsByTagName("lastname")[0].childNodes[0].nodeValue + "</td><td>" +
-                x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "</td><td>" +
-                x[i].getElementsByTagName("division")[0].childNodes[0].nodeValue + "</td><td>" +
-                x[i].getElementsByTagName("building")[0].childNodes[0].nodeValue + "</td><td>" +
-                x[i].getElementsByTagName("room")[0].childNodes[0].nodeValue + "</td></tr>";
         }
 
-        document.getElementById("id").innerHTML = table;
-    }
-</script>
+        // Original function — unchanged except it is now called from toggleEmployeeData()
+        function empDetails(xml) {
+            let i;
+            let xmlDoc = xml.responseXML;
+            let table = `<tr><th>Firstname</th><th>Lastname</th>
+                <th>Title</th><th>Division</th>
+                <th>Building</th><th>Room</th>
+            </tr>`;
+            let x = xmlDoc.getElementsByTagName("employee");
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("firstname")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("lastname")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("title")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("division")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("building")[0].childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("room")[0].childNodes[0].nodeValue + "</td></tr>";
+            }
+            document.getElementById("id").innerHTML = table;
+        }
+    </script>
 </head>
-
 <body>
-    <button type="button" id="btn" class="button" onclick="toggleTable()">
-    Get Employee Data
-    </button>
-
+    <center>
+        <!--
+            AI-ASSISTED: Button now has id="toggleBtn" so JavaScript can update its text.
+            onclick changed from loadXMLDoc() to toggleEmployeeData().
+            Initial text set to "Get Employee Data" per AI suggestion.
+        -->
+        <button type="button" id="toggleBtn" class="button" onclick="toggleEmployeeData()">
+            Get Employee Data
+        </button>
+    </center>
     <br><br>
-    <table id="id" style="display:none;"></table>
+    <table id="id"></table>
 </body>
-
-<p>The toggle button was created with help from Claude AI. Claude added a toggleTable() function that shows and hides the table and updates the button text based on its current state.</p>
-
 </html>
