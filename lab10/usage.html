@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How RDF 1.1 Turtle Is Used</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>RDF 1.1 Turtle</h1>
+        <nav>
+            <a href="index.html">What Is It?</a>
+            <a href="importance.html">Why It Matters</a>
+            <a href="usage.html">How It Is Used</a>
+            <a href="sources.html">Sources</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>How RDF 1.1 Turtle Is Used</h2>
+
+        <p>To use Turtle, you first have to start with understanding the triple structure. Every statement in Turtle is written as a subject, followed by a predicate, followed 
+            by an object, and ends with a period. The subject and predicate are URIs that are wrapped in angle brackets, and the object can either be a URI or a plain text 
+            value called a literal. Here is a simple example of what a single Turtle triple looks like written out in full: &lt;http://example.org/luke&gt; 
+            &lt;http://xmlns.com/foaf/0.1/age&gt; "19". In that statement, the subject is the resource representing me, luke. The predicate indicates the property "age" from the 
+            FOAF vocabulary, and the object is the string value 19. Every Turtle file is made up of many of these triples working together to describe a set of data.
+        </p>
+
+        <p>The best way to use Turtle is by using the ability to declare prefixes at the top of a file.  This shortens long URIs into shorter readable versions. Instead of 
+            writing out the full FOAF namespace URI every time, you can declare @prefix foaf:, and then you write the full URI once. This makes it so that all you have to do is
+            just write foaf:name anywhere in the rest of the file. By doing this you make Turtle documents much shorter and easier to read. Turtle also allows you to group 
+            multiple statements about the same subject together using a semicolon between each predicate-object pair,so you only have to write the subject once. Using prefixes 
+            and semicolins together are the main reason Turtle is considered the most human-friendly RDF format available.
+        </p>
+
+        <p>Turtle is used in many real-world places.  In science, there are groups like the European Bioinformatic Institute whom use turtle in order to share data that talk
+            about genes/diseases.  In the government they also use turtle in order to publish data that is easily accessible.  The government also uses turtle to combine
+            information.  There are also tools for using turtle in different programming languages.  There is Apache Jena for java, RDFLib for python, and N3.js for javascript.
+            This makes turtle very versatile since you only have to learn it once.
+        </p>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Luke Ginski</p>
+    </footer>
+
+</body>
+</html>
